@@ -14,6 +14,31 @@ Model restores the following punctuations -- **[! ? . , - : ; ' ]**
 The model also restores the upper-casing of words.
 
 -----------------------------------------------
+## 🤷 Usage
+
+**Below is a quick way to use the template.**
+
+1. First, install the package.
+
+```
+pip install respunct
+```
+
+2. Sample python code.
+
+``` python
+from respunct import RestorePuncts
+
+model = RestorePuncts()
+
+model.restore_puncts("""
+henrique foi no lago pescar com o pedro mais tarde foram para a casa do pedro fritar os peixes""")
+# output:
+# Henrique foi no lago pescar com o Pedro. Mais tarde, foram para a casa do Pedro fritar os peixes.
+
+```
+
+-----------------------------------------------
 ## 🎯 Accuracy
 
 |  label                    |   precision  |  recall | f1-score  | support|
@@ -39,84 +64,7 @@ The model also restores the upper-casing of words.
 | **weighted avg**          |      0.96    |  0.96   |   0.96    | 1047818
 
 -----------------------------------------------
-## 🤷 Output
 
-Example:
-
-```json
-[
-  {
-    "entity_group": "OU",
-    "score": 0.8026431202888489,
-    "word": "henrique",
-    "start": 0,
-    "end": 8
-  },
-  {
-    "entity_group": "OO",
-    "score": 0.9925149083137512,
-    "word": "foi no lago pescar com o",
-    "start": 9,
-    "end": 33
-  },
-  {
-    "entity_group": ".U",
-    "score": 0.8426014184951782,
-    "word": "pedro",
-    "start": 34,
-    "end": 39
-  },
-  {
-    "entity_group": "OU",
-    "score": 0.9519776105880737,
-    "word": "mais",
-    "start": 40,
-    "end": 44
-  },
-  {
-    "entity_group": ",O",
-    "score": 0.8551820516586304,
-    "word": "tarde",
-    "start": 45,
-    "end": 50
-  },
-  {
-    "entity_group": "OO",
-    "score": 0.9902807474136353,
-    "word": "foram para a casa do",
-    "start": 51,
-    "end": 71
-  },
-  {
-    "entity_group": "OU",
-    "score": 0.9227372407913208,
-    "word": "pedro",
-    "start": 72,
-    "end": 77
-  },
-  {
-    "entity_group": "OO",
-    "score": 0.9997054934501648,
-    "word": "fritar os",
-    "start": 78,
-    "end": 87
-  },
-  {
-    "entity_group": ".O",
-    "score": 0.9813661575317383,
-    "word": "peixes",
-    "start": 88,
-    "end": 94
-  }
-]
-```
-
-This output refers to:
-
-```
-Henrique foi no lago pescar com o Pedro. Mais tarde, foram para a casa do Pedro fritar os peixes.
-```
------------------------------------------------
 
 ## 🤙 Contact 
 
